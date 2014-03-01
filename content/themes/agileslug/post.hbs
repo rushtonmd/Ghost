@@ -1,8 +1,10 @@
 {{!< default}}
 
 <header id="site-head">
-    {{#if @blog.logo}}<a id="blog-logo" href="{{@blog.url}}"><div class="bloglogo" style="background: url({{@blog.logo}})"></div></a>{{/if}}
-    <h1 class="blog-title"><a href="{{@blog.url}}">{{@blog.title}}</a></h1>
+    <a href="/" title="Home">
+        <img width="100%" height="100em" src="{{#if @blog.logo}}{{@blog.logo}}{{else}}/images/logo@2x.png{{/if}}" title="{{@blog.title}}" />
+    </a>
+    </div>
     <h2 class="blog-description">{{@blog.description}}</h2>
 </header>
 
