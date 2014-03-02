@@ -265,7 +265,7 @@ img.userimage {
 footer {
   background: rgba(0, 0, 0, 0.05);
   margin: 4em 0 0;
-  padding: 2em 0;
+  padding: 1em 0;
   text-align: center;
 }
 footer section {
@@ -276,6 +276,10 @@ footer section {
   max-width: 600px;
   text-transform: uppercase;
   width: 90%;
+}
+footer section a.fa{
+  color:#7f8c8d;
+  padding-left: 0.4em;
 }
 footer.post-footer {
   background: none;
