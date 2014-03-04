@@ -13,6 +13,14 @@
 
         //$("#blog-logo").prependTo("#site-head-content");
 
+        $('.comment').hide();
+
+    });
+
+    $('#showcomments').on('click', function(event) {  
+     	event.preventDefault();       
+         $('.comment').slideDown();
+         $('#showcomments').hide();
     });
 
 }(jQuery));
