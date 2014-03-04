@@ -350,9 +350,6 @@ a.archive-link {
   text-align: center;
   padding: 0.5em 0;
 }
-.pagination a {
-  color: #3498db;
-}
 .older-posts,
 .newer-posts {
   position: absolute;
