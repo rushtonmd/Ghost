@@ -469,6 +469,9 @@ a.archive-link {
   position: relative;
   top: -1px;
 }
+
+
+
 /* === Media Queries === */
 @media only screen and (min-width: 320px) and (max-width: 500px) {
   footer section span.copyright {
@@ -491,3 +494,9 @@ a.archive-link {
     display: block;
   }
 }
+
+/* === Comments === */
+div[id^='___comments_'], div[id^='___comments_'] iframe {
+  width: 100% !important;
+} 
+
