@@ -452,7 +452,7 @@ describe('Core Helpers', function () {
 
             helpers.ghost_foot.call().then(function (rendered) {
                 should.exist(rendered);
-                rendered.string.should.match(/<script src=".*\/shared\/vendor\/jquery\/jquery.js\?v=abc"><\/script>/);
+                rendered.string.should.match(/<script src=".*\/public\/jquery.js\?v=abc"><\/script>/);
 
                 done();
             }).then(null, done);
@@ -861,6 +861,16 @@ describe('Core Helpers', function () {
             helpers.meta_title.call(post).then(function (rendered) {
                 should.exist(rendered);
                 rendered.string.should.equal('Post Title');
+
+                done();
+            }).then(null, done);
+        });
+
+        it('can return tag name', function (done) {
+            var post = {relativeUrl: '/tag/foo', tag: {name: 'foo'}};
+            helpers.meta_title.call(post).then(function (rendered) {
+                should.exist(rendered);
+                rendered.string.should.equal('foo - Ghost');
 
                 done();
             }).then(null, done);

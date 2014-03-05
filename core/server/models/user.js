@@ -1,5 +1,4 @@
 var _              = require('lodash'),
-    uuid           = require('node-uuid'),
     when           = require('when'),
     errors         = require('../errorHandling'),
     nodefn         = require('when/node/function'),
@@ -18,7 +17,9 @@ var _              = require('lodash'),
 
 function validatePasswordLength(password) {
     try {
-        validator.check(password, "Your password must be at least 8 characters long.").len(8);
+        if (!validator.isLength(password, 8)) {
+            throw new Error('Your password must be at least 8 characters long.');
+        }
     } catch (error) {
         return when.reject(error);
     }
@@ -112,7 +113,7 @@ User = ghostBookshelf.Model.extend({
             // Add this user to the admin role (assumes admin = role_id: 1)
             return userData.roles().attach(1);
         }).then(function (addedUserRole) {
-            /*jslint unparam:true*/
+            /*jshint unused:false*/
             // Return the added user as expected
 
             return when.resolve(userData);
