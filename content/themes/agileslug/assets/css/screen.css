@@ -285,6 +285,7 @@ footer section a.fa{
 footer.post-footer {
   background: none;
   border-top: 1px solid #ecf0f1;
+  margin-bottom: 8em;
   margin-top: 1em;
 }
 /* === Navigation and Pagination === */
@@ -490,6 +491,9 @@ a.archive-link {
   }
   .page-number {
     display: block;
+  }
+  footer.post-footer {
+    margin-bottom: 4em;
   }
 }
 
