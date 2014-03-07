@@ -46,7 +46,7 @@
             <section class="author">
                 <div class="authorimage" style="background: url({{author.image}})"></div>
                 <p class="attr">Author</p>
-                <h4><a href="{{author.website}}">{{author.name}}</a><a href="https://plus.google.com/109069296675218736060?rel=author"></a></h4>
+                <h4><a href="{{author.website}}">{{author.name}}</a></h4>
                 <p class="bio">{{author.bio}}</p>
             </section>
             {{/if}}
@@ -57,7 +57,23 @@
 
         <p class="show-comments"><a href="" id="showcomments" title="Show Comments">SHOW COMMENTS</a></p>
 
-        <section class="comment">
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'agileslug'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+        <section class="comment" style="display: none;">
             <div id="post_{{id}}_comments"></div>
             <script async type="text/javascript" src="//apis.google.com/js/plusone.js?callback=gpcb"></script>
             <script>(function () {var c=document.getElementById('post_{{id}}_comments'),w = c.offsetWidth;c.innerHTML = '<div class="g-comments" data-href="{{@blog.url}}{{url}}" data-width="' + w + '" data-first_party_property="BLOGGER" data-view_type="FILTERED_POSTMOD"></div>';})();</script>
