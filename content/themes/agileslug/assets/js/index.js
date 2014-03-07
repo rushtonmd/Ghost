@@ -13,17 +13,7 @@
 
         //$("#blog-logo").prependTo("#site-head-content");
 
-        //$('.comment').hide();
-        //$('#disqus_thread').hide();
-        $('#showcomments').hide();
 
-    });
-
-    $('#showcomments').on('click', function(event) {  
-     	//event.preventDefault();       
-         //$('.comment').slideDown();
-         //$('#disqus_thread').slideDown();
-         //$('#showcomments').hide();
     });
 
 }(jQuery));
