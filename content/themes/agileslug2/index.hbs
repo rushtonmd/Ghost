@@ -1,0 +1,63 @@
+{{!< default}}
+<div class="container">
+
+    <div>
+        <header id="site-head">
+            <a href="/" title="Home">
+                <img width="100%" height="100em" src="{{#if @blog.logo}}{{@blog.logo}}{{else}}/images/logo@2x.png{{/if}}" title="{{@blog.title}}" />
+            </a>
+            <h2 class="blog-description">{{@blog.description}}</h2>
+        </header>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-7 col-md-8 blog-main">
+            <main class="content" role="main">
+
+                {{#foreach posts}}
+
+                <article class="post-preview">
+                    <header>
+                        <h1 class="post-title"><a href="{{url}}">{{{title}}}</a></h1>
+                        <div class="post-meta">
+                            <span>By <a href="{{author.website}}">{{author.name}}</a> on </span>
+                            <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="dddd, MMMM DD, YYYY"}}</time>
+                        </div>
+                    </header>
+                    <div class="row">
+                        <section class="post-excerpt">
+                            <div class="post-excerpt-image col-md-6"> {{content characters="1"}}</div>
+                            <div class="post-excerpt-summary col-md-6">{{content characters="500"}}</div>
+                            <p class="readmore"><a href="{{url}}">Read this article <i class="fa fa-chevron-circle-right"></i></a></p>
+                        </section>
+                    </div>
+                </article>
+
+                {{/foreach}}
+
+                <div class="col-sm-11 col-sm-offset-1">
+                    {{pagination}}
+                </div>
+
+            </main>
+        </div>
+
+
+        <div class="col-sm-4 col-sm-offset-1 col-md-3 blog-sidebar">
+          <div class="sidebar-module sidebar-module-inset">
+            <div class="profile-image-container">
+                <img class="profile-image" src="https://googledrive.com/host/0B18xxyTNHKYOVjNDYy01WTNtOTQ/profile_photo_MDR.jpg" class="fa-kz iGb" style="cursor: pointer;">
+            </div>
+            <p><a href="http://rushtonmd.com" >Mark D Rushton</a> PMP/CSM shares 15+ years if experiences, pitfalls, anecdotes, and lessons learned to heighten the agile software development and management industry.</p>
+
+          </div>
+          <div class="sidebar-module">
+<a class="twitter-timeline" href="https://twitter.com/agileslug" data-widget-id="463112046435786752">Tweets by @agileslug</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+
+          </div>
+        </div><!-- /.blog-sidebar -->
+    </div>
+</div>
+
